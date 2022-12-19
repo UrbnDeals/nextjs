@@ -32,8 +32,8 @@ export const siteSettings = {
     address: '',
   },
   logo: {
-    url: '/assets/images/logo.svg',
-    alt: 'ChawkBazar',
+    url: '/assets/images/urbn-deals.webp',
+    alt: 'Urbn Deals',
     href: '/',
     width: 95,
     height: 30,
@@ -723,6 +723,11 @@ export const siteSettings = {
             label: 'menu-404',
           },
         ],
+      },
+			{
+        id: 6,
+        path: '/shops',
+        label: 'menu-profile',
       },
     ],
     mobileMenu: [

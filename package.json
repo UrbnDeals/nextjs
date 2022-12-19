@@ -3,9 +3,9 @@
 	"version": "2.1.5",
 	"private": true,
 	"scripts": {
+		"build": "next build",
 		"clean": "rimraf \"{.next,dist,build,out,node_modules}\"",
 		"dev": "next dev",
-		"build": "next build",
 		"start": "next start"
 	},
 	"dependencies": {
