@@ -1,7 +1,6 @@
 import Layout from '@components/layout/layout';
 import PageHeader from '@components/ui/page-header';
 import Container from '@components/ui/container';
-import SectionHeader from '@components/common/section-header';
 import PropertyCarousel from '@containers/property-carousel';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
