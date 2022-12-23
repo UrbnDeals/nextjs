@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
 				<div className="relative">
 					<Button
 						type="submit"
-						className="h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
+						className="bg-primary-main hover:bg-secondary-hover h-12 lg:h-14 mt-1 text-sm lg:text-base w-full sm:w-auto"
 					>
 						{t("common:button-send-message")}
 					</Button>

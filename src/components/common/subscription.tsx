@@ -69,7 +69,7 @@ const Subscription: React.FC<Props> = ({ className = 'px-5 sm:px-8 md:px-16 2xl:
             })}
             errorKey={errors.subscription_email?.message}
           />
-          <Button disableBorderRadius={disableBorderRadius} className="mt-3 sm:mt-0 w-full sm:w-auto sm:ms-2 md:h-full flex-shrink-0">
+          <Button disableBorderRadius={disableBorderRadius} className="bg-primary-main hover:bg-secondary-hover mt-3 sm:mt-0 w-full sm:w-auto sm:ms-2 md:h-full flex-shrink-0">
             <span className="lg:py-0.5">{t(`${buttonText}`)}</span>
           </Button>
         </div>

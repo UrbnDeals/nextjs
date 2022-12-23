@@ -67,7 +67,7 @@ export default function Newsletter() {
 								})}
 								errorKey={errors.email?.message}
 							/>
-							<Button className="w-full h-12 lg:h-14 mt-3 sm:mt-4">
+							<Button className="bg-primary-main w-full h-12 lg:h-14 mt-3 sm:mt-4">
 								{t("common:button-subscribe")}
 							</Button>
 						</form>

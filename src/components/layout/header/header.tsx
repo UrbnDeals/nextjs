@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           <Logo />
 
           <HeaderMenu data={site_header.menu} className="hidden lg:flex md:ms-6 xl:ms-10" />
-					<Link href="/add-a-listing"  className="whitespace-nowrap mr-2 text-primary">
+					<Link href="/add-a-listing"  className="bg-primary-main hover:bg-secondary-hover p-4 text-white rounded-md whitespace-nowrap mr-2 text-primary">
 						{t("common:text-add-listing")}
 					</Link>
           <div className="flex-shrink-0 ms-auto lg:me-5 xl:me-8 2xl:me-10">

@@ -15,7 +15,7 @@ module.exports = {
 				body: '#5A5A5A',
 				heading: '#212121',
 				input: '#1D1E1F',
-				black: '#000',
+				black: '#303030',
 				white: '#fff',
 				linen: '#FBF1E9',
 				linenSecondary: '#ECE7E3',
@@ -42,6 +42,14 @@ module.exports = {
 					800: '#707070',
 					900: '#343D48',
 				},
+				primary: {
+					main: '#2583ff',
+					hover: '#f2f5f8'
+				},
+				secondary: {
+					main: '#2583ff',
+					hover: '#0500e6'
+				}
 			},
 			fontSize: {
 				'10px': '.625rem',
