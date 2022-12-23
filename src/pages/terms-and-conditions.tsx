@@ -44,9 +44,10 @@ export default function TermsPage() {
 						{/* End of section scroll spy menu */}
 
 						<div className="md:w-9/12 md:ps-8 ">
-							{termsAndServices?.map((item) => (
+							{termsAndServices?.map((item) => {
 								// @ts-ignore
-								<Element
+								console.log("item", t(`${item.title}`));
+								return <Element
 									key={item.title}
 									id={makeTitleToDOMId(item.title)}
 									className="mb-10"
@@ -61,7 +62,7 @@ export default function TermsPage() {
 										}}
 									/>
 								</Element>
-							))}
+})}
 						</div>
 						{/* End of content */}
 					</div>
