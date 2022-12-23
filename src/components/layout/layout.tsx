@@ -20,23 +20,23 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 						content: 'width=device-width, initial-scale=1.0',
 					},
 				]}
-				title="ChawkBazar React - React Next E-commerce Template"
-				description="Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
-				canonical="https://chawkbazar.vercel.app/"
+				title="Urbn Deals"
+				description="Your real estate investment marketplace. Buy or sell wholesale or investment properties all on one site."
+				canonical="https://urbnDeals.vercel.app/"
 				openGraph={{
-					url: 'https://chawkbazar.vercel.app',
-					title: 'ChawkBazar React - React Next E-commerce Template',
+					url: 'https://urbnDeals.vercel.app',
+					title: 'Urbn Deals React',
 					description:
-						'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
+						'Your real estate investment marketplace. Buy or sell wholesale or investment properties all on one site.',
 					images: [
 						{
-							url: '/assets/images/og-image-01.png',
+							url: 'https://urbndeals.com/wp-content/uploads/2022/10/Urbn-Deals-Brand-Kit-270-×-90-px-90-×-90-px-70-×-70-px.png',
 							width: 800,
 							height: 600,
 							alt: 'Og Image Alt',
 						},
 						{
-							url: '/assets/images/og-image-02.png',
+							url: 'https://urbndeals.com/wp-content/uploads/2022/10/Urbn-Deals-Brand-Kit-270-×-90-px-90-×-90-px-70-×-70-px.png',
 							width: 900,
 							height: 800,
 							alt: 'Og Image Alt Second',

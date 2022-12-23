@@ -24,7 +24,7 @@ import { SunglassIcon } from '@components/icons/sunglass-icon';
 import { SneakerIcon } from '@components/icons/sneaker-icon';
 
 export const siteSettings = {
-  name: 'ChawkBazar',
+  name: 'urbnDeals',
   description: 'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
   author: {
     name: 'RedQ, Inc.',

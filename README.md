@@ -1,4 +1,4 @@
-# ChawkBazar React Template
+# Urbn Deals React Template
 
 ## Introduction
 
@@ -21,10 +21,6 @@ Tech specification for this template is given below
 - [Axios](https://axios-http.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-## Getting Started & Installation
-
-For getting started with the template you have to follow the below procedure. First navigate to the `chawkbazar` directory.
-
 ### Step 1 : Configure your env file
 
 Within the project directory you'll find a `.env.local.template` file just rename it as `.env.local`.
@@ -36,7 +32,6 @@ Within the project directory you'll find a `.env.local.template` file just renam
 Run below command for getting started with this template.
 
 ```bash
-# on chawkbazar directory
 $ yarn
 $ yarn dev # which will running the template for development
 ```
@@ -118,7 +113,6 @@ const { data, isLoading, error } = useProductQuery(slug as string);
 
 If you want to host the template in vercel.com then follow the below procedure
 
-- Navigate to `chawkbazar`
 - Put your api endpoint at `vercel.json` file.
 - Now run below command
 
