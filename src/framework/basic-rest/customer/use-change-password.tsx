@@ -1,6 +1,6 @@
 // import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
 // import http from "@framework/utils/http";
-import { useMutation } from "react-query";
+import { useMutation } from 'react-query';
 
 export interface ChangePasswordInputType {
   newPassword: string;
@@ -15,11 +15,11 @@ export const useChangePasswordMutation = () => {
     (input: ChangePasswordInputType) => changePassword(input),
     {
       onSuccess: (data) => {
-        console.log(data, "ChangePassword success response");
+        console.log(data, 'ChangePassword success response');
       },
       onError: (data) => {
-        console.log(data, "ChangePassword error response");
-      },
+        console.log(data, 'ChangePassword error response');
+      }
     }
   );
 };

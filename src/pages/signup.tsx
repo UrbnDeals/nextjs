@@ -25,7 +25,12 @@ SignUpPage.Layout = Layout;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common', 'forms', 'menu', 'footer'])),
-    },
+      ...(await serverSideTranslations(locale!, [
+        'common',
+        'forms',
+        'menu',
+        'footer'
+      ]))
+    }
   };
 };

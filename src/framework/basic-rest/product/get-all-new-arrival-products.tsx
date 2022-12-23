@@ -17,7 +17,13 @@ const fetchNewArrivalAncientProducts = async ({ queryKey }: any) => {
 
 export const useNewArrivalProductsQuery = (options: QueryOptionsType) => {
   if (options.demoVariant === 'ancient') {
-    return useQuery<Product[], Error>([API_ENDPOINTS.NEW_ARRIVAL_PRODUCTS_ANCIENT, options], fetchNewArrivalAncientProducts);
+    return useQuery<Product[], Error>(
+      [API_ENDPOINTS.NEW_ARRIVAL_PRODUCTS_ANCIENT, options],
+      fetchNewArrivalAncientProducts
+    );
   }
-  return useQuery<Product[], Error>([API_ENDPOINTS.PRODUCTS_ANCIENT, options], fetchNewArrivalProducts);
+  return useQuery<Product[], Error>(
+    [API_ENDPOINTS.PRODUCTS_ANCIENT, options],
+    fetchNewArrivalProducts
+  );
 };

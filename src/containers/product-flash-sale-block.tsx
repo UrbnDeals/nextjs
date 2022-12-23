@@ -23,7 +23,16 @@ interface WrapperProps {
 
 interface ProductsProps extends WrapperProps {
   limit?: number;
-  itemVariant?: 'grid' | 'gridSlim' | 'list' | 'listSmall' | 'gridModern' | 'gridModernWide' | 'gridTrendy' | 'rounded' | 'circle';
+  itemVariant?:
+    | 'grid'
+    | 'gridSlim'
+    | 'list'
+    | 'listSmall'
+    | 'gridModern'
+    | 'gridModernWide'
+    | 'gridTrendy'
+    | 'rounded'
+    | 'circle';
 }
 
 function ProductFlashSaleWrapper({
@@ -33,18 +42,26 @@ function ProductFlashSaleWrapper({
   disableSectionPadding,
   sectionHeading,
   hideCountdown,
-  date,
+  date
 }: React.PropsWithChildren<WrapperProps>) {
   return (
     <>
       <div
-        className={`${className} ${!disableSectionBorder && 'border border-gray-300'} rounded-md ${
-          !disableSectionPadding && 'pt-5 md:pt-6 lg:pt-7 pb-5 lg:pb-7 px-4 md:px-5 lg:px-7'
+        className={`${className} ${
+          !disableSectionBorder && 'border border-gray-300'
+        } rounded-md ${
+          !disableSectionPadding &&
+          'pt-5 md:pt-6 lg:pt-7 pb-5 lg:pb-7 px-4 md:px-5 lg:px-7'
         }`}
       >
         <div className="flex justify-between items-center flex-wrap mb-5 md:mb-6">
-          <SectionHeader sectionHeading={sectionHeading || ''} className="mb-0" />
-          {!hideCountdown && <Countdown date={date} intervalDelay={1000} renderer={renderer} />}
+          <SectionHeader
+            sectionHeading={sectionHeading || ''}
+            className="mb-0"
+          />
+          {!hideCountdown && (
+            <Countdown date={date} intervalDelay={1000} renderer={renderer} />
+          )}
         </div>
         {children}
       </div>
@@ -102,11 +119,11 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
   TwoXlCols = 5,
   demoVariant,
   disableBorderRadius = false,
-  bgGray,
+  bgGray
 }) => {
   const { data, isLoading, error } = useFlashSaleProductsQuery({
     limit: limit || 10,
-    demoVariant,
+    demoVariant
   });
 
   if (isLoading) {
@@ -153,30 +170,38 @@ const ProductsFlashSaleBlock: React.FC<ProductsProps> = ({
       hideCountdown={hideCountdown}
     >
       <div
-        className={`grid grid-cols-${demoVariant === 'ancient' ? 1 : 2} sm:grid-cols-${demoVariant === 'ancient' ? 1 : 2} md:grid-cols-${
+        className={`grid grid-cols-${
+          demoVariant === 'ancient' ? 1 : 2
+        } sm:grid-cols-${demoVariant === 'ancient' ? 1 : 2} md:grid-cols-${
           demoVariant === 'ancient' ? 2 : 3
-        } lg:grid-cols-${demoVariant === 'ancient' ? 3 : 4} 2xl:grid-cols-${TwoXlCols} gap-x-${
+        } lg:grid-cols-${
+          demoVariant === 'ancient' ? 3 : 4
+        } 2xl:grid-cols-${TwoXlCols} gap-x-${
           demoVariant === 'ancient' ? 2 : 3
-        } md:gap-x-${demoVariant === 'ancient' ? 2 : 5} xl:gap-x-${demoVariant === 'ancient' ? 2 : 7} gap-y-${
-          demoVariant === 'ancient' ? 2 : 4
-        } lg:gap-y-${demoVariant === 'ancient' ? 2 : 5} xl:gap-y-${demoVariant === 'ancient' ? 2 : 6} 2xl:gap-y-${
+        } md:gap-x-${demoVariant === 'ancient' ? 2 : 5} xl:gap-x-${
+          demoVariant === 'ancient' ? 2 : 7
+        } gap-y-${demoVariant === 'ancient' ? 2 : 4} lg:gap-y-${
+          demoVariant === 'ancient' ? 2 : 5
+        } xl:gap-y-${demoVariant === 'ancient' ? 2 : 6} 2xl:gap-y-${
           demoVariant === 'ancient' ? 2 : 8
         }`}
       >
         {limit ? (
           <>
-            {data?.productFlashSellGridTwo?.slice(0, limit)?.map((product: any) => (
-              <ProductCard
-                key={`product--key${product.id}`}
-                product={product}
-                imgWidth={itemVariant === 'list' ? 180 : 324}
-                imgHeight={itemVariant === 'list' ? 180 : 324}
-                variant={itemVariant || 'gridSlim'}
-                disableBorderRadius={disableBorderRadius}
-                demoVariant={demoVariant}
-                bgGray={bgGray}
-              />
-            ))}
+            {data?.productFlashSellGridTwo
+              ?.slice(0, limit)
+              ?.map((product: any) => (
+                <ProductCard
+                  key={`product--key${product.id}`}
+                  product={product}
+                  imgWidth={itemVariant === 'list' ? 180 : 324}
+                  imgHeight={itemVariant === 'list' ? 180 : 324}
+                  variant={itemVariant || 'gridSlim'}
+                  disableBorderRadius={disableBorderRadius}
+                  demoVariant={demoVariant}
+                  bgGray={bgGray}
+                />
+              ))}
           </>
         ) : (
           <>

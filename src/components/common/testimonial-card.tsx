@@ -11,7 +11,12 @@ interface Props {
   demoVariant?: 'ancient';
 }
 
-const TestimonialCard: React.FC<Props> = ({ item, type, disableBoarderRadius = false, demoVariant }) => {
+const TestimonialCard: React.FC<Props> = ({
+  item,
+  type,
+  disableBoarderRadius = false,
+  demoVariant
+}) => {
   return (
     <div
       className={`bg-gray-200 w-full ${
@@ -20,12 +25,12 @@ const TestimonialCard: React.FC<Props> = ({ item, type, disableBoarderRadius = f
     >
       <div
         className={cn('', {
-          'flex items-center gap-3.5': type === 'modern',
+          'flex items-center gap-3.5': type === 'modern'
         })}
       >
         <div
           className={cn('w-[90px]', {
-            'w-[70px]': type === 'modern',
+            'w-[70px]': type === 'modern'
           })}
         >
           <img
@@ -33,7 +38,7 @@ const TestimonialCard: React.FC<Props> = ({ item, type, disableBoarderRadius = f
             alt={item.name}
             className={cn('rounded-full border-[5px] border-white', {
               'border-0': type === 'modern',
-              'shadow-avatar': demoVariant !== 'ancient',
+              'shadow-avatar': demoVariant !== 'ancient'
             })}
           />
         </div>
@@ -42,12 +47,17 @@ const TestimonialCard: React.FC<Props> = ({ item, type, disableBoarderRadius = f
           <Text
             variant="mediumHeading"
             className={cn('2xl:text-2xl mt-4 xl:mt-7', {
-              'text-lg 2xl:text-lg font-bold mt-0 xl:mt-0 mb-1': type === 'modern',
+              'text-lg 2xl:text-lg font-bold mt-0 xl:mt-0 mb-1':
+                type === 'modern'
             })}
           >
             {item.name}
           </Text>
-          {type === 'modern' && <span className="text-base text-[#5A5A5A] font-normal">from Duisbarg</span>}
+          {type === 'modern' && (
+            <span className="text-base text-[#5A5A5A] font-normal">
+              from Duisbarg
+            </span>
+          )}
         </div>
 
         {type !== 'modern' ? (
@@ -71,13 +81,19 @@ const TestimonialCard: React.FC<Props> = ({ item, type, disableBoarderRadius = f
         )}
       </div>
       <Text
-        className={cn('text-sm sm:leading-7 lg:text-base lg:leading-[1.625rem] mt-5 xl:mt-7', {
-          'font-normal !leading-7 !lg:leading-7 tracking-[-0.1px]': type === 'modern',
-        })}
+        className={cn(
+          'text-sm sm:leading-7 lg:text-base lg:leading-[1.625rem] mt-5 xl:mt-7',
+          {
+            'font-normal !leading-7 !lg:leading-7 tracking-[-0.1px]':
+              type === 'modern'
+          }
+        )}
       >
         {type !== 'modern' && <QuoteIcon className="mb-3 xl:mb-4" />}
         {item.text}
-        {type === 'modern' && <QuoteIconRotate className="mt-3 xl:mt-4 ml-auto" />}
+        {type === 'modern' && (
+          <QuoteIconRotate className="mt-3 xl:mt-4 ml-auto" />
+        )}
       </Text>
     </div>
   );

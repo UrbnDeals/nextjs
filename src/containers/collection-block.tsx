@@ -1,22 +1,22 @@
-import CollectionCard from '@components/common/collection-card'
-import SectionHeader from '@components/common/section-header'
+import CollectionCard from '@components/common/collection-card';
+import SectionHeader from '@components/common/section-header';
 
 interface Props {
-  data: any
-  className?: string
-  variant?: 'default' | 'modern' | 'trendy'
-  sectionHeading?: string
+  data: any;
+  className?: string;
+  variant?: 'default' | 'modern' | 'trendy';
+  sectionHeading?: string;
 }
 
 const CollectionBlock: React.FC<Props> = ({
   data,
   className = 'mb-12 md:mb-14 xl:mb-16 lg:pt-1 xl:pt-0',
   variant = 'default',
-  sectionHeading,
+  sectionHeading
 }) => {
   const isEven = (value: number) => {
-    return value % 2
-  }
+    return value % 2;
+  };
   return (
     <div>
       {sectionHeading && <SectionHeader sectionHeading={sectionHeading} />}
@@ -38,7 +38,7 @@ const CollectionBlock: React.FC<Props> = ({
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CollectionBlock
+export default CollectionBlock;

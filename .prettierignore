@@ -1,0 +1,10 @@
+# Ignore artifacts:
+node_modules
+build
+coverage
+package.json
+public/
+styles/
+.next/
+.vscode/
+.yarn/

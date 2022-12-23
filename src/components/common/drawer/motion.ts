@@ -4,17 +4,17 @@ import type { DrawerProps } from 'rc-drawer';
 export const maskMotion: DrawerProps['maskMotion'] = {
   motionAppear: true,
   motionName: 'mask-motion',
-  onAppearEnd: console.warn,
+  onAppearEnd: console.warn
 };
 
 export const motion: DrawerProps['motion'] = (placement) => ({
   motionAppear: true,
-  motionName: `panel-motion-${placement}`,
+  motionName: `panel-motion-${placement}`
 });
 
 const motionProps: Partial<DrawerProps> = {
   maskMotion,
-  motion,
+  motion
 };
 
 export default motionProps;

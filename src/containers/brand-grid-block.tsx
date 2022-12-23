@@ -15,10 +15,10 @@ const BrandGridBlock: React.FC<BrandProps> = ({
   className = 'mb-12 md:mb-14 xl:mb-16',
   sectionHeading,
   variant = '4column',
-  limit = 16,
+  limit = 16
 }) => {
   const { data, isLoading, error } = useBrandsQuery({
-    limit: limit,
+    limit: limit
   });
   const brands = data?.brandsGrid;
   const columnClasses =

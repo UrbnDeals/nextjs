@@ -27,7 +27,7 @@ const initialState = {
   modalView: 'LOGIN_VIEW',
   drawerView: null,
   modalData: null,
-  toastText: '',
+  toastText: ''
 };
 
 type Action =
@@ -111,117 +111,117 @@ function uiReducer(state: State, action: Action) {
     case 'SET_AUTHORIZED': {
       return {
         ...state,
-        isAuthorized: true,
+        isAuthorized: true
       };
     }
     case 'SET_UNAUTHORIZED': {
       return {
         ...state,
-        isAuthorized: false,
+        isAuthorized: false
       };
     }
     case 'OPEN_SIDEBAR': {
       return {
         ...state,
-        displaySidebar: true,
+        displaySidebar: true
       };
     }
     case 'CLOSE_SIDEBAR': {
       return {
         ...state,
         displaySidebar: false,
-        drawerView: null,
+        drawerView: null
       };
     }
     case 'OPEN_CART': {
       return {
         ...state,
-        displayCart: true,
+        displayCart: true
       };
     }
     case 'CLOSE_CART': {
       return {
         ...state,
-        displayCart: false,
+        displayCart: false
       };
     }
     case 'OPEN_SEARCH': {
       return {
         ...state,
-        displaySearch: true,
+        displaySearch: true
       };
     }
     case 'CLOSE_SEARCH': {
       return {
         ...state,
-        displaySearch: false,
+        displaySearch: false
       };
     }
     case 'OPEN_FILTER': {
       return {
         ...state,
-        displayFilter: true,
+        displayFilter: true
       };
     }
     case 'CLOSE_FILTER': {
       return {
         ...state,
-        displayFilter: false,
+        displayFilter: false
       };
     }
     case 'OPEN_SHOP': {
       return {
         ...state,
-        displayShop: true,
+        displayShop: true
       };
     }
     case 'CLOSE_SHOP': {
       return {
         ...state,
-        displayShop: false,
+        displayShop: false
       };
     }
     case 'OPEN_MODAL': {
       return {
         ...state,
         displayModal: true,
-        displaySidebar: false,
+        displaySidebar: false
       };
     }
     case 'CLOSE_MODAL': {
       return {
         ...state,
-        displayModal: false,
+        displayModal: false
       };
     }
     case 'SET_MODAL_VIEW': {
       return {
         ...state,
-        modalView: action.view,
+        modalView: action.view
       };
     }
     case 'SET_DRAWER_VIEW': {
       return {
         ...state,
-        drawerView: action.view,
+        drawerView: action.view
       };
     }
     case 'SET_MODAL_DATA': {
       return {
         ...state,
-        modalData: action.data,
+        modalData: action.data
       };
     }
     case 'SET_TOAST_TEXT': {
       return {
         ...state,
-        toastText: action.text,
+        toastText: action.text
       };
     }
     case 'SET_USER_AVATAR': {
       return {
         ...state,
-        userAvatar: action.value,
+        userAvatar: action.value
       };
     }
   }
@@ -294,7 +294,7 @@ export const UIProvider: React.FC = (props) => {
       setModalView,
       setDrawerView,
       setUserAvatar,
-      setModalData,
+      setModalData
     }),
     [state]
   );

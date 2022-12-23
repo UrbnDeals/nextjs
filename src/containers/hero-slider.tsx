@@ -1,16 +1,16 @@
-import BannerCard from '@components/common/banner-card'
-import Carousel from '@components/ui/carousel/carousel'
-import { ROUTES } from '@utils/routes'
-import { SwiperSlide } from 'swiper/react'
-import cn from 'classnames'
+import BannerCard from '@components/common/banner-card';
+import Carousel from '@components/ui/carousel/carousel';
+import { ROUTES } from '@utils/routes';
+import { SwiperSlide } from 'swiper/react';
+import cn from 'classnames';
 
 interface Props {
-  data: any
-  className?: string
-  buttonGroupClassName?: string
-  variant?: 'box' | 'fullWidth'
-  variantRounded?: 'rounded' | 'default'
-  prevNextButtons?: 'none' | ''
+  data: any;
+  className?: string;
+  buttonGroupClassName?: string;
+  variant?: 'box' | 'fullWidth';
+  variantRounded?: 'rounded' | 'default';
+  prevNextButtons?: 'none' | '';
 }
 //  2xl:mb-[75px]
 const HeroSlider: React.FC<Props> = ({
@@ -19,26 +19,26 @@ const HeroSlider: React.FC<Props> = ({
   variantRounded = 'rounded',
   buttonGroupClassName = '',
   data,
-  prevNextButtons = '',
+  prevNextButtons = ''
 }) => {
   return (
     <div
       className={cn(
         'relative mb-5 md:mb-8',
         {
-          'mx-auto max-w-[1920px]': variant === 'fullWidth',
+          'mx-auto max-w-[1920px]': variant === 'fullWidth'
         },
         className
       )}
     >
       <Carousel
         autoplay={{
-          delay: 5000,
+          delay: 5000
         }}
         className={`mx-0 ${
           variant === 'fullWidth' ? 'carousel-full-width' : ''
         }`}
-        paginationPosition='left'
+        paginationPosition="left"
         prevButtonClasses={`start-6 md:start-8 xl:start-12 2xl:start-16 ${
           prevNextButtons === 'none' && 'hidden'
         }`}
@@ -46,15 +46,15 @@ const HeroSlider: React.FC<Props> = ({
           prevNextButtons === 'none' && 'hidden'
         }`}
         buttonGroupClassName={buttonGroupClassName}
-        nextActivateId='hero-slider-next'
-        prevActivateId='hero-slider-prev'
+        nextActivateId="hero-slider-next"
+        prevActivateId="hero-slider-prev"
         pagination={{
-          clickable: true,
+          clickable: true
         }}
       >
         {data?.map((banner: any) => (
           <SwiperSlide
-            className='carouselItem'
+            className="carouselItem"
             key={`banner--key-${banner?.id}`}
           >
             <BannerCard
@@ -66,7 +66,7 @@ const HeroSlider: React.FC<Props> = ({
         ))}
       </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSlider
+export default HeroSlider;

@@ -1,34 +1,34 @@
-import Container from "@components/ui/container";
-import HeroSlider from "@containers/hero-slider";
-import Layout from "@components/layout/layout-two";
-import { GetStaticProps } from "next";
-import { QueryClient } from "react-query";
-import { dehydrate } from "react-query/hydration";
-import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
-import { fetchFlashSaleProducts } from "@framework/product/get-all-flash-sale-products";
-import { fetchCategories } from "@framework/category/get-all-categories";
-import { fetchNewArrivalProducts } from "@framework/product/get-all-new-arrival-products";
-import { fetchBrands } from "@framework/brand/get-all-brands";
-import ProductsFeatured from "@containers/products-featured";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import CategoryBlockIcon from "@containers/category-block-icon";
-import { ROUTES } from "@utils/routes";
-import { homeSevenBanner as banner } from "@framework/static/banner";
-import { collectionModernData as collection } from "@framework/static/collection";
-import ProductsFlashSaleCarousel from "@containers/product-flash-sale-carousel";
-import NewArrivalsProductFeed from "@components/product/feeds/new-arrivals-product-feed";
-import BannerCard from "@components/common/banner-card";
-import CollectionBlock from "@containers/collection-block";
-import BrandGridBlock from "@containers/brand-grid-block";
-import TestimonialCarousel from "@containers/testimonial-carousel";
-import SubscriptionWithBg from "@components/common/subscription-with-bg";
-import BannerBlock from "@containers/banner-block";
-import ExclusiveBlock from "@containers/exclusive-block";
+import Container from '@components/ui/container';
+import HeroSlider from '@containers/hero-slider';
+import Layout from '@components/layout/layout-two';
+import { GetStaticProps } from 'next';
+import { QueryClient } from 'react-query';
+import { dehydrate } from 'react-query/hydration';
+import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
+import { fetchFlashSaleProducts } from '@framework/product/get-all-flash-sale-products';
+import { fetchCategories } from '@framework/category/get-all-categories';
+import { fetchNewArrivalProducts } from '@framework/product/get-all-new-arrival-products';
+import { fetchBrands } from '@framework/brand/get-all-brands';
+import ProductsFeatured from '@containers/products-featured';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import CategoryBlockIcon from '@containers/category-block-icon';
+import { ROUTES } from '@utils/routes';
+import { homeSevenBanner as banner } from '@framework/static/banner';
+import { collectionModernData as collection } from '@framework/static/collection';
+import ProductsFlashSaleCarousel from '@containers/product-flash-sale-carousel';
+import NewArrivalsProductFeed from '@components/product/feeds/new-arrivals-product-feed';
+import BannerCard from '@components/common/banner-card';
+import CollectionBlock from '@containers/collection-block';
+import BrandGridBlock from '@containers/brand-grid-block';
+import TestimonialCarousel from '@containers/testimonial-carousel';
+import SubscriptionWithBg from '@components/common/subscription-with-bg';
+import BannerBlock from '@containers/banner-block';
+import ExclusiveBlock from '@containers/exclusive-block';
 
 // All data file
-import { bannerDataThree } from "@framework/static/banner";
-import ProductsTopBlock from "@containers/products-top-block";
-import { homeElegantHeroSlider as banners } from "@framework/static/banner";
+import { bannerDataThree } from '@framework/static/banner';
+import ProductsTopBlock from '@containers/products-top-block';
+import { homeElegantHeroSlider as banners } from '@framework/static/banner';
 
 export default function Home() {
   return (
@@ -96,12 +96,12 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
       ...(await serverSideTranslations(locale!, [
-        "common",
-        "forms",
-        "menu",
-        "footer",
-      ])),
+        'common',
+        'forms',
+        'menu',
+        'footer'
+      ]))
     },
-    revalidate: 60,
+    revalidate: 60
   };
 };

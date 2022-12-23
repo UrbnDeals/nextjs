@@ -1,17 +1,17 @@
-import SectionHeader from '@components/common/section-header'
-import Carousel from '@components/ui/carousel/carousel'
-import { SwiperSlide } from 'swiper/react'
-import { Product } from '@framework/types'
-import ProductCard from '@components/product/product-card'
+import SectionHeader from '@components/common/section-header';
+import Carousel from '@components/ui/carousel/carousel';
+import { SwiperSlide } from 'swiper/react';
+import { Product } from '@framework/types';
+import ProductCard from '@components/product/product-card';
 
 interface ProductsBlockProps {
-  sectionHeading: string
-  className?: string
-  categorySlug?: string
-  products?: Product[]
-  loading: boolean
-  error?: string
-  uniqueKey?: string
+  sectionHeading: string;
+  className?: string;
+  categorySlug?: string;
+  products?: Product[];
+  loading: boolean;
+  error?: string;
+  uniqueKey?: string;
   type?:
     | 'rounded'
     | 'circle'
@@ -19,37 +19,37 @@ interface ProductsBlockProps {
     | 'grid'
     | 'gridSlim'
     | 'list'
-    | 'listSmall'
-  imgWidth?: number | string
-  imgHeight?: number | string
+    | 'listSmall';
+  imgWidth?: number | string;
+  imgHeight?: number | string;
 }
 
 const breakpoints = {
   '1500': {
     slidesPerView: 5,
-    spaceBetween: 28,
+    spaceBetween: 28
   },
   '1280': {
     slidesPerView: 4,
-    spaceBetween: 28,
+    spaceBetween: 28
   },
   '1025': {
     slidesPerView: 4,
-    spaceBetween: 12,
+    spaceBetween: 12
   },
   '768': {
     slidesPerView: 3,
-    spaceBetween: 20,
+    spaceBetween: 20
   },
   '480': {
     slidesPerView: 2,
-    spaceBetween: 12,
+    spaceBetween: 12
   },
   '0': {
     slidesPerView: 2,
-    spaceBetween: 12,
-  },
-}
+    spaceBetween: 12
+  }
+};
 
 const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
   sectionHeading,
@@ -57,17 +57,17 @@ const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
   type,
   products,
   imgWidth,
-  imgHeight,
+  imgHeight
 }) => {
   return (
     <div className={`heightFull relative ${className}`}>
       <SectionHeader sectionHeading={sectionHeading} />
       <Carousel
         autoplay={{
-          delay: 4000,
+          delay: 4000
         }}
         breakpoints={breakpoints}
-        className=''
+        className=""
         {...(type === 'gridTrendy'
           ? {
               buttonGroupClassName: '!w-auto !top-0 !end-6',
@@ -79,16 +79,16 @@ const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
                 el: '#productsPaginationFraction',
                 type: 'fraction',
                 formatFractionCurrent: function (number: number) {
-                  return number
-                },
-              },
+                  return number;
+                }
+              }
             }
           : {
-              buttonGroupClassName: 'hidden',
+              buttonGroupClassName: 'hidden'
             })}
       >
         {products?.map((product, id) => (
-          <SwiperSlide key={`testimonial--key-${id}`} className='pt-2'>
+          <SwiperSlide key={`testimonial--key-${id}`} className="pt-2">
             <ProductCard
               product={product}
               variant={type}
@@ -99,7 +99,7 @@ const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
         ))}
       </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default ProductsBlockCarousel
+export default ProductsBlockCarousel;

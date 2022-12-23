@@ -5,7 +5,13 @@ import Scrollbar from '@components/common/scrollbar';
 import { IoIosArrowDown } from 'react-icons/io';
 import Logo from '@components/ui/logo';
 import { useUI } from '@contexts/ui.context';
-import { IoLogoInstagram, IoLogoTwitter, IoLogoFacebook, IoLogoYoutube, IoClose } from 'react-icons/io5';
+import {
+  IoLogoInstagram,
+  IoLogoTwitter,
+  IoLogoFacebook,
+  IoLogoYoutube,
+  IoClose
+} from 'react-icons/io5';
 import { useTranslation } from 'next-i18next';
 
 const social = [
@@ -14,29 +20,29 @@ const social = [
     link: 'https://www.facebook.com/redqinc/',
     icon: <IoLogoFacebook />,
     className: 'facebook',
-    title: 'text-facebook',
+    title: 'text-facebook'
   },
   {
     id: 1,
     link: 'https://twitter.com/redqinc',
     icon: <IoLogoTwitter />,
     className: 'twitter',
-    title: 'text-twitter',
+    title: 'text-twitter'
   },
   {
     id: 2,
     link: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
     icon: <IoLogoYoutube />,
     className: 'youtube',
-    title: 'text-youtube',
+    title: 'text-youtube'
   },
   {
     id: 3,
     link: 'https://www.instagram.com/redqinc/',
     icon: <IoLogoInstagram />,
     className: 'instagram',
-    title: 'text-instagram',
-  },
+    title: 'text-instagram'
+  }
 ];
 
 export default function MobileMenu() {
@@ -59,7 +65,14 @@ export default function MobileMenu() {
     setActiveMenus(newActiveMenus);
   };
 
-  const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex, className = '' }: any) =>
+  const ListMenu = ({
+    dept,
+    data,
+    hasSubMenu,
+    menuName,
+    menuIndex,
+    className = ''
+  }: any) =>
     data.label && (
       <li className={`mb-0.5 ${className}`}>
         <div className="flex items-center justify-between relative">
@@ -84,7 +97,14 @@ export default function MobileMenu() {
             </div>
           )}
         </div>
-        {hasSubMenu && <SubMenu dept={dept} data={data.subMenu} toggle={activeMenus.includes(menuName)} menuIndex={menuIndex} />}
+        {hasSubMenu && (
+          <SubMenu
+            dept={dept}
+            data={data.subMenu}
+            toggle={activeMenus.includes(menuName)}
+            menuIndex={menuIndex}
+          />
+        )}
       </li>
     );
 
@@ -138,7 +158,16 @@ export default function MobileMenu() {
                 const dept: number = 1;
                 const menuName: string = `sidebar-menu-${dept}-${index}`;
 
-                return <ListMenu dept={dept} data={menu} hasSubMenu={menu.subMenu} menuName={menuName} key={menuName} menuIndex={index} />;
+                return (
+                  <ListMenu
+                    dept={dept}
+                    data={menu}
+                    hasSubMenu={menu.subMenu}
+                    menuName={menuName}
+                    key={menuName}
+                    menuIndex={index}
+                  />
+                );
               })}
             </ul>
           </div>

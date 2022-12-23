@@ -17,8 +17,14 @@ const fetchAncientFlashSaleProducts = async ({ queryKey }: any) => {
 
 export const useFlashSaleProductsQuery = (options: QueryOptionsType) => {
   if (options.demoVariant === 'ancient') {
-    return useQuery<any, Error>([API_ENDPOINTS.FLASH_SALE_PRODUCTS_ANCIENT, options], fetchAncientFlashSaleProducts);
+    return useQuery<any, Error>(
+      [API_ENDPOINTS.FLASH_SALE_PRODUCTS_ANCIENT, options],
+      fetchAncientFlashSaleProducts
+    );
   }
 
-  return useQuery<any, Error>([API_ENDPOINTS.FLASH_SALE_PRODUCTS, options], fetchFlashSaleProducts);
+  return useQuery<any, Error>(
+    [API_ENDPOINTS.FLASH_SALE_PRODUCTS, options],
+    fetchFlashSaleProducts
+  );
 };

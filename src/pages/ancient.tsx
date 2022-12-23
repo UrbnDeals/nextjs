@@ -103,9 +103,17 @@ export default function Ancient() {
       <HireDesignerAncient />
 
       <Container>
-        <PopularProductFeed disableBorderRadius={true} demoVariant="ancient" className={sectionCommonStyle} />
+        <PopularProductFeed
+          disableBorderRadius={true}
+          demoVariant="ancient"
+          className={sectionCommonStyle}
+        />
 
-        <DownloadApps disableBorderRadius={true} className={`bg-app-pattern ${sectionCommonStyle}`} variant="ancient" />
+        <DownloadApps
+          disableBorderRadius={true}
+          className={`bg-app-pattern ${sectionCommonStyle}`}
+          variant="ancient"
+        />
 
         <TestimonialCarousel
           sectionHeading="text-testimonial"
@@ -116,7 +124,10 @@ export default function Ancient() {
           demoVariant="ancient"
         />
 
-        <Instagram disableContainerBorderRadius={true} className={`mb-11 lg:mb-12 xl:mb-14 2xl:mb-[75px] md:gap-[7px]`} />
+        <Instagram
+          disableContainerBorderRadius={true}
+          className={`mb-11 lg:mb-12 xl:mb-14 2xl:mb-[75px] md:gap-[7px]`}
+        />
 
         <Subscription
           disableBorderRadius={true}
@@ -132,7 +143,12 @@ Ancient.Layout = Layout;
 export const getStaticProps: GetStaticProps = async ({ locale }: any) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common', 'forms', 'menu', 'footer'])),
-    },
+      ...(await serverSideTranslations(locale!, [
+        'common',
+        'forms',
+        'menu',
+        'footer'
+      ]))
+    }
   };
 };

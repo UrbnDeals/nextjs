@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 const data = {
   title: 'common:text-subscribe-heading',
   description: 'common:text-subscribe-description',
-  buttonText: 'common:button-subscribe',
+  buttonText: 'common:button-subscribe'
 };
 
 interface Props {
@@ -20,16 +20,19 @@ type FormValues = {
 };
 
 const defaultValues = {
-  subscription_email: '',
+  subscription_email: ''
 };
 
-const Subscription: React.FC<Props> = ({ className = 'px-5 sm:px-8 md:px-16 2xl:px-24', disableBorderRadius = false }) => {
+const Subscription: React.FC<Props> = ({
+  className = 'px-5 sm:px-8 md:px-16 2xl:px-24',
+  disableBorderRadius = false
+}) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
-    defaultValues,
+    defaultValues
   });
   const { t } = useTranslation();
   const { title, description, buttonText } = data;
@@ -48,9 +51,15 @@ const Subscription: React.FC<Props> = ({ className = 'px-5 sm:px-8 md:px-16 2xl:
         >
           {t(`${title}`)}
         </Text>
-        <p className="text-body text-xs md:text-sm leading-6 md:leading-7">{t(`${description}`)}</p>
+        <p className="text-body text-xs md:text-sm leading-6 md:leading-7">
+          {t(`${description}`)}
+        </p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex-shrink-0 w-full sm:w-96 md:w-[545px]" noValidate>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex-shrink-0 w-full sm:w-96 md:w-[545px]"
+        noValidate
+      >
         <div className="flex flex-col sm:flex-row items-start justify-end">
           <Input
             disableBorderRadius={disableBorderRadius}
@@ -64,12 +73,15 @@ const Subscription: React.FC<Props> = ({ className = 'px-5 sm:px-8 md:px-16 2xl:
               pattern: {
                 value:
                   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: 'forms:email-error',
-              },
+                message: 'forms:email-error'
+              }
             })}
             errorKey={errors.subscription_email?.message}
           />
-          <Button disableBorderRadius={disableBorderRadius} className="bg-primary-main hover:bg-secondary-hover mt-3 sm:mt-0 w-full sm:w-auto sm:ms-2 md:h-full flex-shrink-0">
+          <Button
+            disableBorderRadius={disableBorderRadius}
+            className="bg-primary-main hover:bg-secondary-hover mt-3 sm:mt-0 w-full sm:w-auto sm:ms-2 md:h-full flex-shrink-0"
+          >
             <span className="lg:py-0.5">{t(`${buttonText}`)}</span>
           </Button>
         </div>

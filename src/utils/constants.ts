@@ -1,1 +1,1 @@
-export const CUSTOMER = "customer";
+export const CUSTOMER = 'customer';

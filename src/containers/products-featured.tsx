@@ -25,26 +25,31 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
   limit = 5,
   hideBanner = false,
   demoVariant,
-  disableBorderRadius = false,
+  disableBorderRadius = false
 }) => {
   const { data, error } = useFeaturedProductsQuery({
     limit: limit,
-    demoVariant,
+    demoVariant
   });
 
   return (
     <div className={className}>
-      <SectionHeader sectionHeading={sectionHeading} categorySlug={categorySlug} />
+      <SectionHeader
+        sectionHeading={sectionHeading}
+        categorySlug={categorySlug}
+      />
       {error ? (
         <Alert message={error?.message} />
       ) : (
         <div
           className={cn(
-            `grid grid-cols-4 grid-rows-2 gap-${demoVariant === 'ancient' ? 1 : 3} md:gap-${demoVariant === 'ancient' ? 2 : 5} xl:gap-${
+            `grid grid-cols-4 grid-rows-2 gap-${
+              demoVariant === 'ancient' ? 1 : 3
+            } md:gap-${demoVariant === 'ancient' ? 2 : 5} xl:gap-${
               demoVariant === 'ancient' ? 1 : 7
             }`,
             {
-              'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4': variant === 'modern',
+              'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4': variant === 'modern'
             }
           )}
         >

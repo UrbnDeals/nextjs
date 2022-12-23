@@ -45,10 +45,23 @@ export default function Home() {
           categorySlug="/search"
           variant="center"
         />
-        <ProductsFeatured variant="flat" sectionHeading="text-featured-products" limit={8} />
-        <BannerBlock data={bannerDataFour} className="mb-12 md:mb-14 xl:mb-16 hidden sm:flex" />
-        <BannerBlock data={bannerDataFourMobile} className="mb-12 md:mb-14 xl:mb-16 sm:hidden" />
-        <CategoryBlockIcon sectionHeading="text-browse-categories" variant="circle" />
+        <ProductsFeatured
+          variant="flat"
+          sectionHeading="text-featured-products"
+          limit={8}
+        />
+        <BannerBlock
+          data={bannerDataFour}
+          className="mb-12 md:mb-14 xl:mb-16 hidden sm:flex"
+        />
+        <BannerBlock
+          data={bannerDataFourMobile}
+          className="mb-12 md:mb-14 xl:mb-16 sm:hidden"
+        />
+        <CategoryBlockIcon
+          sectionHeading="text-browse-categories"
+          variant="circle"
+        />
         <NewArrivalsProductFeed />
         <BannerCard
           banner={bannerWinter}
@@ -79,18 +92,29 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     [API_ENDPOINTS.FLASH_SALE_PRODUCTS, { limit: 10 }],
     fetchFlashSaleProducts
   );
-  await queryClient.prefetchQuery([API_ENDPOINTS.CATEGORIES, { limit: 10 }], fetchCategories);
+  await queryClient.prefetchQuery(
+    [API_ENDPOINTS.CATEGORIES, { limit: 10 }],
+    fetchCategories
+  );
   await queryClient.prefetchQuery(
     [API_ENDPOINTS.NEW_ARRIVAL_PRODUCTS, { limit: 10 }],
     fetchNewArrivalProducts
   );
-  await queryClient.prefetchQuery([API_ENDPOINTS.BRANDS, { limit: 0 }], fetchBrands);
+  await queryClient.prefetchQuery(
+    [API_ENDPOINTS.BRANDS, { limit: 0 }],
+    fetchBrands
+  );
 
   return {
     props: {
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
-      ...(await serverSideTranslations(locale!, ['common', 'forms', 'menu', 'footer'])),
+      ...(await serverSideTranslations(locale!, [
+        'common',
+        'forms',
+        'menu',
+        'footer'
+      ]))
     },
-    revalidate: 60,
+    revalidate: 60
   };
 };

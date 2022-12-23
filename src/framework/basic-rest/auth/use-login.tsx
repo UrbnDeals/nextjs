@@ -12,7 +12,7 @@ export interface LoginInputType {
 async function login(input: LoginInputType) {
   // return http.post(API_ENDPOINTS.LOGIN, input);
   return {
-    token: `${input.email}.${input.remember_me}`.split('').reverse().join(''),
+    token: `${input.email}.${input.remember_me}`.split('').reverse().join('')
   };
 }
 
@@ -26,6 +26,6 @@ export const useLoginMutation = () => {
     },
     onError: (data) => {
       console.log(data, 'login error response');
-    },
+    }
   });
 };

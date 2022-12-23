@@ -10,11 +10,11 @@ interface Props {
 export default function PopularProductFeed({
   demoVariant,
   disableBorderRadius = false,
-  className = 'mb-7 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-[75px]',
+  className = 'mb-7 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-[75px]'
 }: Props) {
   const { data, isLoading, error } = usePopularProductsQuery({
     limit: 10,
-    demoVariant,
+    demoVariant
   });
   return (
     <>

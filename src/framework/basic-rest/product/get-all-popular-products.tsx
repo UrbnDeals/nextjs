@@ -10,5 +10,8 @@ export const fetchNewArrivalProducts = async ({ queryKey }: any) => {
 };
 
 export const usePopularProductsQuery = (options: QueryOptionsType) => {
-  return useQuery<Product[], Error>([API_ENDPOINTS.POPULAR_PRODUCTS, options], fetchNewArrivalProducts);
+  return useQuery<Product[], Error>(
+    [API_ENDPOINTS.POPULAR_PRODUCTS, options],
+    fetchNewArrivalProducts
+  );
 };

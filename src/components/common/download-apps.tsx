@@ -16,7 +16,7 @@ const data = {
       altText: 'button-app-store',
       appButton: '/assets/images/app-store.svg',
       buttonWidth: 209,
-      buttonHeight: 60,
+      buttonHeight: 60
     },
     {
       id: 2,
@@ -24,9 +24,9 @@ const data = {
       altText: 'button-play-store',
       appButton: '/assets/images/play-store.svg',
       buttonWidth: 209,
-      buttonHeight: 60,
-    },
-  ],
+      buttonHeight: 60
+    }
+  ]
 };
 
 interface Props {
@@ -35,7 +35,11 @@ interface Props {
   disableBorderRadius?: boolean;
 }
 
-const DownloadApps: React.FC<Props> = ({ className, variant, disableBorderRadius = false }) => {
+const DownloadApps: React.FC<Props> = ({
+  className,
+  variant,
+  disableBorderRadius = false
+}) => {
   const { appButtons, title, subTitle, appImage, appImage2, appImage3 } = data;
   const { t } = useTranslation('common');
   return (
@@ -47,13 +51,16 @@ const DownloadApps: React.FC<Props> = ({ className, variant, disableBorderRadius
     >
       <div className="flex-shrink-0 w-full sm:w-60 md:w-96 lg:w-auto lg:max-w-lg xl:max-w-xl lg:flex lg:items-center pb-5 md:pb-8 lg:pb-12 xl:pb-16">
         <div className="py-4 md:py-6 xl:py-8 text-center sm:text-start">
-          <Text variant="mediumHeading" className="-mt-1 mb-2 md:mb-3 lg:mb-3.5 xl:mb-4">
+          <Text
+            variant="mediumHeading"
+            className="-mt-1 mb-2 md:mb-3 lg:mb-3.5 xl:mb-4"
+          >
             {t(`${title}`)}
           </Text>
           <h2
             className="text-heading text-md sm:text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-normal leading-7 sm:leading-8 md:leading-snug xl:leading-relaxed 2xl:leading-snug mb-6 md:mb-8 lg:mb-9 xl:mb-12 2xl:mb-14 lg:pe-20 2xl:pe-0"
             dangerouslySetInnerHTML={{
-              __html: t(`${subTitle}`),
+              __html: t(`${subTitle}`)
             }}
           />
           <div className="flex justify-center sm:justify-start space-s-2 md:space-s-3 px-6 sm:px-0">
@@ -66,7 +73,9 @@ const DownloadApps: React.FC<Props> = ({ className, variant, disableBorderRadius
                 <img
                   src={item.appButton}
                   alt={t(`${item.altText}`)}
-                  className={`w-36 lg:w-44 xl:w-auto ${!disableBorderRadius && 'rounded-md'}`}
+                  className={`w-36 lg:w-44 xl:w-auto ${
+                    !disableBorderRadius && 'rounded-md'
+                  }`}
                   width={item.buttonWidth}
                   height={item.buttonHeight}
                 />
@@ -77,7 +86,13 @@ const DownloadApps: React.FC<Props> = ({ className, variant, disableBorderRadius
       </div>
       <div className="hidden sm:flex items-end ps-4 -me-0.5 2xl:-me-1.5 w-60 md:w-72 lg:w-96 xl:w-auto">
         <Image
-          src={variant === 'modern' ? appImage2 : variant === 'ancient' ? appImage3 : appImage}
+          src={
+            variant === 'modern'
+              ? appImage2
+              : variant === 'ancient'
+              ? appImage3
+              : appImage
+          }
           alt={t('text-app-thumbnail')}
           width={375}
           height={430}

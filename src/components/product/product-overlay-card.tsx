@@ -18,7 +18,7 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   index,
   variant = 'left',
   imgLoading = 'lazy',
-  disableBorderRadius = false,
+  disableBorderRadius = false
 }) => {
   let size = 260;
   let classes;
@@ -50,7 +50,7 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   const { price, basePrice, discount } = usePrice({
     amount: product.sale_price ? product.sale_price : product.price,
     baseAmount: product.price,
-    currencyCode: 'USD',
+    currencyCode: 'USD'
   });
   function handlePopupView() {
     setModalData({ data: product });
@@ -66,13 +66,19 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
       } relative items-center justify-between overflow-hidden`}
     >
       <div
-        className={cn('flex justify-center items-center p-4 h-full 3xl:min-h-[330px]', {
-          '!p-0': variant === 'modern',
-        })}
+        className={cn(
+          'flex justify-center items-center p-4 h-full 3xl:min-h-[330px]',
+          {
+            '!p-0': variant === 'modern'
+          }
+        )}
         title={product?.name}
       >
         <Image
-          src={product?.image?.original ?? '/assets/placeholder/products/product-featured.png'}
+          src={
+            product?.image?.original ??
+            '/assets/placeholder/products/product-featured.png'
+          }
           width={size}
           height={size}
           objectFit="contain"
@@ -88,7 +94,7 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
             'absolute top-3.5 md:top-5 3xl:top-7 start-3.5 md:start-5 3xl:start-7 bg-[#B26788] text-white text-10px md:text-sm leading-5 inline-block px-2 xl:px-3 pt-0.5 pb-1',
             {
               '!py-0.5': variant === 'modern',
-              'rounded-md ': !disableBorderRadius,
+              'rounded-md ': !disableBorderRadius
             }
           )}
         >
@@ -101,7 +107,8 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
           className={cn(
             'absolute top-3.5 md:top-5 3xl:top-7 start-3.5 md:start-5 3xl:start-7 bg-heading text-white text-10px md:text-sm leading-5 rounded-md inline-block px-2 xl:px-3 pt-0.5 pb-1',
             {
-              'text-[#22C55E] bg-transparent !start-auto right-3.5 md:right-5 3xl:right-7 font-bold': variant === 'modern',
+              'text-[#22C55E] bg-transparent !start-auto right-3.5 md:right-5 3xl:right-7 font-bold':
+                variant === 'modern'
             }
           )}
         >
@@ -114,10 +121,14 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
         title={product?.name}
       >
         <div className="md:pe-2 lg:pe-0 2xl:pe-2 overflow-hidden">
-          <h2 className="text-heading font-semibold text-sm md:text-base xl:text-lg mb-1 truncate">{product?.name}</h2>
+          <h2 className="text-heading font-semibold text-sm md:text-base xl:text-lg mb-1 truncate">
+            {product?.name}
+          </h2>
 
           {variant !== 'modern' ? (
-            <p className="text-body text-xs xl:text-sm leading-normal xl:leading-relaxed truncate max-w-[250px]">{product?.description}</p>
+            <p className="text-body text-xs xl:text-sm leading-normal xl:leading-relaxed truncate max-w-[250px]">
+              {product?.description}
+            </p>
           ) : (
             <Text className="pb-0.5 truncate">35 Brands, 1000+ Products</Text>
           )}
@@ -125,7 +136,11 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
 
         {variant !== 'modern' && (
           <div className="flex-shrink-0 flex flex-row-reverse md:flex-col lg:flex-row-reverse 2xl:flex-col items-center md:items-end lg:items-start 2xl:items-end justify-end md:text-end lg:text-start xl:text-end mt-2 md:-mt-0.5 lg:mt-2 2xl:-mt-0.5">
-            {discount && <del className="text-sm md:text-base lg:text-sm xl:text-base 3xl:text-lg">{basePrice}</del>}
+            {discount && (
+              <del className="text-sm md:text-base lg:text-sm xl:text-base 3xl:text-lg">
+                {basePrice}
+              </del>
+            )}
             <div className="text-heading font-segoe font-semibold text-base md:text-xl lg:text-base xl:text-xl 3xl:text-2xl 3xl:mt-0.5 pe-2 md:pe-0 lg:pe-2 2xl:pe-0">
               {price}
             </div>

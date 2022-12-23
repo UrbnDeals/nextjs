@@ -28,47 +28,47 @@ import '@styles/rc-drawer.css';
 import { getDirection } from '@utils/get-direction';
 
 function handleExitComplete() {
-	if (typeof window !== 'undefined') {
-		window.scrollTo({ top: 0 });
-	}
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0 });
+  }
 }
 
 function Noop({ children }: React.PropsWithChildren<{}>) {
-	return <>{children}</>;
+  return <>{children}</>;
 }
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
-	const queryClientRef = useRef<any>();
-	if (!queryClientRef.current) {
-		queryClientRef.current = new QueryClient();
-	}
-	const router = useRouter();
-	const dir = getDirection(router.locale);
-	useEffect(() => {
-		document.documentElement.dir = dir;
-	}, [dir]);
-	const Layout = (Component as any).Layout || Noop;
+  const queryClientRef = useRef<any>();
+  if (!queryClientRef.current) {
+    queryClientRef.current = new QueryClient();
+  }
+  const router = useRouter();
+  const dir = getDirection(router.locale);
+  useEffect(() => {
+    document.documentElement.dir = dir;
+  }, [dir]);
+  const Layout = (Component as any).Layout || Noop;
 
-	return (
-		<AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-			<QueryClientProvider client={queryClientRef.current}>
-				{/* @ts-ignore */}
-				<Hydrate state={pageProps.dehydratedState}>
-					{/* @ts-ignore */}
-					<ManagedUIContext>
-						<Layout pageProps={pageProps}>
-							<DefaultSeo />
-							<Component {...pageProps} key={router.route} />
-							<ToastContainer />
-						</Layout>
-						<ManagedModal />
-						<ManagedDrawer />
-					</ManagedUIContext>
-				</Hydrate>
-				{/* <ReactQueryDevtools /> */}
-			</QueryClientProvider>
-		</AnimatePresence>
-	);
+  return (
+    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+      <QueryClientProvider client={queryClientRef.current}>
+        {/* @ts-ignore */}
+        <Hydrate state={pageProps.dehydratedState}>
+          {/* @ts-ignore */}
+          <ManagedUIContext>
+            <Layout pageProps={pageProps}>
+              <DefaultSeo />
+              <Component {...pageProps} key={router.route} />
+              <ToastContainer />
+            </Layout>
+            <ManagedModal />
+            <ManagedDrawer />
+          </ManagedUIContext>
+        </Hydrate>
+        {/* <ReactQueryDevtools /> */}
+      </QueryClientProvider>
+    </AnimatePresence>
+  );
 };
 
 export default appWithTranslation(CustomApp);

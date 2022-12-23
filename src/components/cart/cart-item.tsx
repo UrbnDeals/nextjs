@@ -19,11 +19,11 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const { addItemToCart, removeItemFromCart, clearItemFromCart } = useCart();
   const { price } = usePrice({
     amount: item.price,
-    currencyCode: 'USD',
+    currencyCode: 'USD'
   });
   const { price: totalPrice } = usePrice({
     amount: item.itemTotal,
-    currencyCode: 'USD',
+    currencyCode: 'USD'
   });
 
   return (
@@ -55,7 +55,10 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
       </div>
 
       <div className="flex flex-col w-full overflow-hidden">
-        <Link href={`${ROUTES.PRODUCT}/${item?.slug}`} className="truncate text-sm text-heading mb-1.5 -mt-1">
+        <Link
+          href={`${ROUTES.PRODUCT}/${item?.slug}`}
+          className="truncate text-sm text-heading mb-1.5 -mt-1"
+        >
           {generateCartItemName(item.name, item.attributes)}
         </Link>
         {/* @ts-ignore */}
@@ -70,7 +73,9 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             onDecrement={() => removeItemFromCart(item.id)}
             variant="dark"
           />
-          <span className="font-semibold text-sm md:text-base text-heading leading-5">{totalPrice}</span>
+          <span className="font-semibold text-sm md:text-base text-heading leading-5">
+            {totalPrice}
+          </span>
         </div>
       </div>
     </motion.div>

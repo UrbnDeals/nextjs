@@ -15,9 +15,9 @@ const BuyDesignerAncient: React.FC<Props> = ({ imgWidth, imgHeight }) => {
   const {
     data: products,
     isLoading,
-    error,
+    error
   }: any = useNewArrivalProductsQuery({
-    limit: 10,
+    limit: 10
   });
   return (
     // <div className="pt-6 pb-5 md:pt-12 md:pb-7 bg-black mb-10 md:mb-12 xl:mb-14 2xl:mb-20">
@@ -29,7 +29,8 @@ const BuyDesignerAncient: React.FC<Props> = ({ imgWidth, imgHeight }) => {
               Buy Designer <br /> Dress For Anything
             </h2>
             <div className="mb-6 md:mb-8 lg:mb-10 xl:mb-10 text-base md:text-base lg:text-base xl:text-base 2xl:text-lg  3xl:text-lg text-white pe-4 md:leading-8 lg:leading-8 xl:leading-8 2xl:leading-8 3xl:leading-8 leading-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis ultrices sollicitudin aliquam.
             </div>
             <button className="bg-white text-black text-sm font-semibold leading-[28px] px-6 py-3 lg:px-8 xl:px-8 2xl:px-8 lg:py-4 xl:py-4 duration-300 hover:bg-white/80">
               Go to collection

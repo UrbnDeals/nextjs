@@ -37,7 +37,7 @@ const breakpoints = {
   }
 };
 
-const TestimonialCarousel: React.FC<TestimonialsProps> = ({
+const PropertyCarousel: React.FC<TestimonialsProps> = ({
   sectionHeading,
   className = 'mb-10 md:mb-12 xl:mb-14 md:pb-1 xl:pb-0',
   type,
@@ -53,9 +53,6 @@ const TestimonialCarousel: React.FC<TestimonialsProps> = ({
     >
       <SectionHeader sectionHeading={sectionHeading} />
       <Carousel
-        autoplay={{
-          delay: 4000
-        }}
         breakpoints={breakpoints}
         className={`testimonial-carousel ${
           reduceCardSpacing && 'reduce-child-padding'
@@ -99,4 +96,4 @@ const TestimonialCarousel: React.FC<TestimonialsProps> = ({
   );
 };
 
-export default TestimonialCarousel;
+export default PropertyCarousel;

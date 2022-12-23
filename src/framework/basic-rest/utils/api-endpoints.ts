@@ -29,5 +29,5 @@ export const API_ENDPOINTS = {
   SHOP: '/shop.json',
   SEARCH: '/search.json',
   ORDERS: '/orders.json',
-  ORDER: '/order.json',
+  ORDER: '/order.json'
 };

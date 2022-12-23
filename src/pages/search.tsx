@@ -25,10 +25,16 @@ export default function Shop() {
             <StickyBox offsetTop={50} offsetBottom={20}>
               <div className="pb-7">
                 <BreadcrumbItems separator="/">
-                  <ActiveLink href={'/'} activeClassName="font-semibold text-heading">
+                  <ActiveLink
+                    href={'/'}
+                    activeClassName="font-semibold text-heading"
+                  >
                     <a>{t('breadcrumb-home')}</a>
                   </ActiveLink>
-                  <ActiveLink href={ROUTES.SEARCH} activeClassName="font-semibold text-heading">
+                  <ActiveLink
+                    href={ROUTES.SEARCH}
+                    activeClassName="font-semibold text-heading"
+                  >
                     <a className="capitalize">{t('breadcrumb-search')}</a>
                   </ActiveLink>
                 </BreadcrumbItems>
@@ -53,7 +59,12 @@ Shop.Layout = Layout;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common', 'forms', 'menu', 'footer'])),
-    },
+      ...(await serverSideTranslations(locale!, [
+        'common',
+        'forms',
+        'menu',
+        'footer'
+      ]))
+    }
   };
 };

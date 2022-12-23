@@ -1,37 +1,37 @@
-import BannerCard from "@components/common/banner-card";
-import CategoryListCard from "@components/common/category-list-card";
-import SellWithProgress from "@components/common/sale-with-progress";
-import Carousel from "@components/ui/carousel/carousel";
-import { SwiperSlide } from "swiper/react";
-import { useCategoriesQuery } from "@framework/category/get-all-categories";
-import { useFlashSaleProductsQuery } from "@framework/product/get-all-flash-sale-products";
-import { useWindowSize } from "@utils/use-window-size";
-import { homeFourGridBanners as banners } from "@framework/static/banner";
-import CategoryListCardLoader from "@components/ui/loaders/category-list-card-loader";
-import { ROUTES } from "@utils/routes";
-import Alert from "@components/ui/alert";
+import BannerCard from '@components/common/banner-card';
+import CategoryListCard from '@components/common/category-list-card';
+import SellWithProgress from '@components/common/sale-with-progress';
+import Carousel from '@components/ui/carousel/carousel';
+import { SwiperSlide } from 'swiper/react';
+import { useCategoriesQuery } from '@framework/category/get-all-categories';
+import { useFlashSaleProductsQuery } from '@framework/product/get-all-flash-sale-products';
+import { useWindowSize } from '@utils/use-window-size';
+import { homeFourGridBanners as banners } from '@framework/static/banner';
+import CategoryListCardLoader from '@components/ui/loaders/category-list-card-loader';
+import { ROUTES } from '@utils/routes';
+import Alert from '@components/ui/alert';
 
 interface Props {
   className?: string;
 }
 
 const categoryResponsive = {
-  "768": {
+  '768': {
     slidesPerView: 3,
-    spaceBetween: 14,
+    spaceBetween: 14
   },
-  "480": {
+  '480': {
     slidesPerView: 2,
-    spaceBetween: 12,
+    spaceBetween: 12
   },
-  "0": {
+  '0': {
     slidesPerView: 1,
-    spaceBetween: 12,
-  },
+    spaceBetween: 12
+  }
 };
 
 const HeroWithCategoryFlash: React.FC<Props> = ({
-  className = "mb-12 md:mb-14 xl:mb-16",
+  className = 'mb-12 md:mb-14 xl:mb-16'
 }) => {
   return (
     <div
@@ -45,7 +45,7 @@ const HeroWithCategoryFlash: React.FC<Props> = ({
             key={`banner--key${banner.id}`}
             banner={banner}
             href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
-            className={banner.type === "large" ? "col-span-2" : "col-span-1"}
+            className={banner.type === 'large' ? 'col-span-2' : 'col-span-1'}
           />
         ))}
       </div>
@@ -59,7 +59,7 @@ const HeroWithCategoryFlash: React.FC<Props> = ({
 export function CategoryListCardSection() {
   const { width } = useWindowSize();
   const { data, isLoading, error } = useCategoriesQuery({
-    limit: 10,
+    limit: 10
   });
 
   return (
@@ -73,7 +73,7 @@ export function CategoryListCardSection() {
           <Carousel
             breakpoints={categoryResponsive}
             autoplay={{
-              delay: 4000,
+              delay: 4000
             }}
             buttonSize="small"
           >
@@ -119,7 +119,7 @@ export function CategoryListCardSection() {
 export function SellWithProgressCardSection() {
   const { width } = useWindowSize();
   const { data, isLoading, error } = useFlashSaleProductsQuery({
-    limit: 10,
+    limit: 10
   });
 
   return (

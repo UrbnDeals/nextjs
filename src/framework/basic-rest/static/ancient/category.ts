@@ -7,13 +7,13 @@ export const category = [
       mobile: {
         url: '/assets/images/banner/banner-mobile-1.jpg',
         width: 450,
-        height: 120,
+        height: 120
       },
       desktop: {
         url: '/assets/images/banner/banner-1.jpg',
         width: 1800,
-        height: 270,
-      },
-    },
-  },
+        height: 270
+      }
+    }
+  }
 ];

@@ -1,56 +1,56 @@
-import BannerCard from '@components/common/banner-card'
-import Carousel from '@components/ui/carousel/carousel'
-import { SwiperSlide } from 'swiper/react'
-import { saleBannerGrid } from '@framework/static/banner'
-import { useWindowSize } from '@utils/use-window-size'
-import { ROUTES } from '@utils/routes'
+import BannerCard from '@components/common/banner-card';
+import Carousel from '@components/ui/carousel/carousel';
+import { SwiperSlide } from 'swiper/react';
+import { saleBannerGrid } from '@framework/static/banner';
+import { useWindowSize } from '@utils/use-window-size';
+import { ROUTES } from '@utils/routes';
 
 const breakpoints = {
   '1025': {
     slidesPerView: 3,
-    spaceBetween: 28,
+    spaceBetween: 28
   },
   '768': {
     slidesPerView: 3,
-    spaceBetween: 20,
+    spaceBetween: 20
   },
   '480': {
     slidesPerView: 2,
-    spaceBetween: 12,
+    spaceBetween: 12
   },
   '0': {
     slidesPerView: 1,
-    spaceBetween: 12,
-  },
-}
+    spaceBetween: 12
+  }
+};
 
 interface BannerProps {
-  className?: string
-  limit?: number
-  data?: any
+  className?: string;
+  limit?: number;
+  data?: any;
 }
 
 const SaleBannerGrid: React.FC<BannerProps> = ({
   className = 'mb-12 lg:mb-14 xl:mb-16 lg:pb-1 xl:pb-0',
   limit = 2,
-  data = saleBannerGrid,
+  data = saleBannerGrid
 }) => {
-  const { width } = useWindowSize()
+  const { width } = useWindowSize();
   return (
     <div className={`${className}`}>
       {width < 768 ? (
         <div>
           <Carousel
             breakpoints={breakpoints}
-            prevActivateId='prev'
-            nextActivateId='next'
+            prevActivateId="prev"
+            nextActivateId="next"
           >
             {data?.slice(0, limit).map((banner: any) => (
               <SwiperSlide key={banner.id}>
                 <BannerCard
                   banner={banner}
                   href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
-                  className='h-full'
+                  className="h-full"
                   effectActive={true}
                 />
               </SwiperSlide>
@@ -58,7 +58,7 @@ const SaleBannerGrid: React.FC<BannerProps> = ({
           </Carousel>
         </div>
       ) : (
-        <div className='md:grid md:grid-cols-2 md:gap-5 xl:gap-7 relative'>
+        <div className="md:grid md:grid-cols-2 md:gap-5 xl:gap-7 relative">
           {data?.slice(0, limit).map((banner: any) => (
             <BannerCard
               key={banner.id}
@@ -71,7 +71,7 @@ const SaleBannerGrid: React.FC<BannerProps> = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SaleBannerGrid
+export default SaleBannerGrid;

@@ -1,14 +1,14 @@
-import SectionHeader from "@components/common/section-header";
-import ProductsBlock from "@containers/products-block";
-import { useProductsQuery } from "@framework/product/get-all-products-2";
-import { Tab } from "@headlessui/react";
-import { useTranslation } from "next-i18next";
+import SectionHeader from '@components/common/section-header';
+import ProductsBlock from '@containers/products-block';
+import { useProductsQuery } from '@framework/product/get-all-products-2';
+import { Tab } from '@headlessui/react';
+import { useTranslation } from 'next-i18next';
 
 const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
 
   const { data, isLoading, error } = useProductsQuery({
-    limit: 10,
+    limit: 10
   });
 
   return (
@@ -23,34 +23,34 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           <Tab
             as="li"
             className={({ selected }) =>
-              selected ? "tab-li-selected" : "tab-li"
+              selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t("tab-all-collection")}</p>
+            <p>{t('tab-all-collection')}</p>
           </Tab>
           <Tab
             as="li"
             className={({ selected }) =>
-              selected ? "tab-li-selected" : "tab-li"
+              selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t("tab-mens-collection")}</p>
+            <p>{t('tab-mens-collection')}</p>
           </Tab>
           <Tab
             as="li"
             className={({ selected }) =>
-              selected ? "tab-li-selected" : "tab-li"
+              selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t("tab-womens-collection")}</p>
+            <p>{t('tab-womens-collection')}</p>
           </Tab>
           <Tab
             as="li"
             className={({ selected }) =>
-              selected ? "tab-li-selected" : "tab-li"
+              selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t("tab-kids-collection")}</p>
+            <p>{t('tab-kids-collection')}</p>
           </Tab>
         </Tab.List>
 

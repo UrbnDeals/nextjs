@@ -27,65 +27,65 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
   roundedSpaceBetween,
   imgSize,
   demoVariant,
-  disableBorderRadius = false,
+  disableBorderRadius = false
 }) => {
   const breakpoints = {
     '1720': {
       slidesPerView: roundedItemCount === 5 ? 5 : 8,
-      spaceBetween: roundedSpaceBetween || 28,
+      spaceBetween: roundedSpaceBetween || 28
     },
     '1400': {
       slidesPerView: roundedItemCount === 5 ? 5 : 7,
-      spaceBetween: roundedSpaceBetween || 28,
+      spaceBetween: roundedSpaceBetween || 28
     },
     '1024': {
       slidesPerView: roundedItemCount === 5 ? 4 : 6,
-      spaceBetween: roundedSpaceBetween || 20,
+      spaceBetween: roundedSpaceBetween || 20
     },
     '768': {
       slidesPerView: roundedItemCount === 5 ? 3 : 5,
-      spaceBetween: roundedSpaceBetween || 20,
+      spaceBetween: roundedSpaceBetween || 20
     },
     '500': {
       slidesPerView: roundedItemCount === 5 ? 2 : 4,
-      spaceBetween: roundedSpaceBetween || 12,
+      spaceBetween: roundedSpaceBetween || 12
     },
     '0': {
       slidesPerView: roundedItemCount === 5 ? 2 : 3,
-      spaceBetween: roundedSpaceBetween || 12,
-    },
+      spaceBetween: roundedSpaceBetween || 12
+    }
   };
 
   const breakpointsCircle = {
     '1720': {
       slidesPerView: 8,
-      spaceBetween: 48,
+      spaceBetween: 48
     },
     '1400': {
       slidesPerView: 7,
-      spaceBetween: 32,
+      spaceBetween: 32
     },
     '1025': {
       slidesPerView: 6,
-      spaceBetween: 28,
+      spaceBetween: 28
     },
     '768': {
       slidesPerView: 5,
-      spaceBetween: 20,
+      spaceBetween: 20
     },
     '500': {
       slidesPerView: 4,
-      spaceBetween: 20,
+      spaceBetween: 20
     },
     '0': {
       slidesPerView: 3,
-      spaceBetween: 12,
-    },
+      spaceBetween: 12
+    }
   };
 
   const { data, isLoading, error } = useCategoriesQuery({
     limit: 10,
-    demoVariant: demoVariant || undefined,
+    demoVariant: demoVariant || undefined
   });
 
   return (
@@ -98,7 +98,7 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
           breakpoints={type === 'rounded' ? breakpoints : breakpointsCircle}
           buttonGroupClassName="-mt-4 md:-mt-5 xl:-mt-7"
           autoplay={{
-            delay: 3000,
+            delay: 3000
           }}
         >
           {isLoading && !data

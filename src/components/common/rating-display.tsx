@@ -12,10 +12,15 @@ const RatingDisplay: FC<Props> = ({ rating = 3.5 }) => {
 
   return (
     <div className="flex space-x-[3px] mb-1 md:mb-0 md:space-x-1.5">
-      {Array.from({ length: parseInt((rating >= highestValue ? highestValue : rating) + '') })?.map((_: any, id: number) => (
+      {Array.from({
+        length: parseInt((rating >= highestValue ? highestValue : rating) + '')
+      })?.map((_: any, id: number) => (
         <StarIcon key={`star-fill-icon-${id}`} />
       ))}
-      {!!(rating < highestValue && parseFloat(String(rating)).toString().split('.')[1]) && <StarIconHalf />}
+      {!!(
+        rating < highestValue &&
+        parseFloat(String(rating)).toString().split('.')[1]
+      ) && <StarIconHalf />}
       {Array.from({
         length:
           highestValue -
@@ -24,7 +29,7 @@ const RatingDisplay: FC<Props> = ({ rating = 3.5 }) => {
               !!parseFloat(rating + '')
                 .toString()
                 .split('.')[1]
-            )),
+            ))
       })?.map((_: any, id: number) => (
         <StarIconStroke key={`star-fill-icon-${id}`} />
       ))}

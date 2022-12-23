@@ -24,20 +24,27 @@ const Card: React.FC<Props> = ({
   href,
   showName = true,
   imgSize,
-  disableBorderRadius = false,
+  disableBorderRadius = false
 }) => {
   const { name, image } = item ?? {};
-  const imageSize: any = (imgSize === 'large' && 375) || (size === 'small' && 180) || (size === 'medium' && 198);
+  const imageSize: any =
+    (imgSize === 'large' && 375) ||
+    (size === 'small' && 180) ||
+    (size === 'medium' && 198);
 
   const placeholderImage = `/assets/placeholder/card-${size}.svg`;
   const { t } = useTranslation('common');
 
   return (
-    <Link href={href} className="group flex justify-center text-center flex-col">
+    <Link
+      href={href}
+      className="group flex justify-center text-center flex-col"
+    >
       {/* disableBorderRadius===false && (variant === 'rounded' ? 'rounded-md' : 'rounded-full') */}
       <div
         className={`relative inline-flex mb-3.5 md:mb-4 lg:mb-5 xl:mb-6 mx-auto ${
-          !disableBorderRadius && (variant === 'rounded' ? 'rounded-md' : 'rounded-full')
+          !disableBorderRadius &&
+          (variant === 'rounded' ? 'rounded-md' : 'rounded-full')
         }`}
       >
         <div className="flex">
@@ -47,14 +54,18 @@ const Card: React.FC<Props> = ({
             width={imageSize}
             height={imageSize}
             quality={100}
-            className={`object-cover bg-gray-300 ${!disableBorderRadius && (variant === 'rounded' ? 'rounded-md' : 'rounded-full')}`}
+            className={`object-cover bg-gray-300 ${
+              !disableBorderRadius &&
+              (variant === 'rounded' ? 'rounded-md' : 'rounded-full')
+            }`}
           />
         </div>
         {effectActive === true && (
           <>
             <div
               className={`absolute top left bg-black w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-30 ${
-                !disableBorderRadius && (variant === 'rounded' ? 'rounded-md' : 'rounded-full')
+                !disableBorderRadius &&
+                (variant === 'rounded' ? 'rounded-md' : 'rounded-full')
               }`}
             />
             <div className="absolute top left h-full w-full flex items-center justify-center">

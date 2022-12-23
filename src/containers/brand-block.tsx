@@ -21,38 +21,38 @@ const BrandBlock: React.FC<BrandProps> = ({
   sectionHeading,
   showName = true,
   demoVariant,
-  disableBorderRadius = false,
+  disableBorderRadius = false
 }) => {
   const breakpoints = {
     '1720': {
       slidesPerView: 8,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 28,
+      spaceBetween: demoVariant === 'ancient' ? 8 : 28
     },
     '1400': {
       slidesPerView: 7,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 28,
+      spaceBetween: demoVariant === 'ancient' ? 8 : 28
     },
     '1025': {
       slidesPerView: 6,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 20,
+      spaceBetween: demoVariant === 'ancient' ? 8 : 20
     },
     '768': {
       slidesPerView: 5,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 20,
+      spaceBetween: demoVariant === 'ancient' ? 8 : 20
     },
     '500': {
       slidesPerView: 4,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 20,
+      spaceBetween: demoVariant === 'ancient' ? 8 : 20
     },
     '0': {
       slidesPerView: 3,
-      spaceBetween: demoVariant === 'ancient' ? 8 : 12,
-    },
+      spaceBetween: demoVariant === 'ancient' ? 8 : 12
+    }
   };
 
   const { data, isLoading, error } = useBrandsQuery({
     limit: 8,
-    demoVariant,
+    demoVariant
   });
   const brands = data?.brands;
 
@@ -67,7 +67,7 @@ const BrandBlock: React.FC<BrandProps> = ({
           breakpoints={breakpoints}
           buttonGroupClassName="-mt-4 md:-mt-5 xl:-mt-7"
           autoplay={{
-            delay: 4000,
+            delay: 4000
             // delay: 4000000,
           }}
         >
@@ -86,7 +86,7 @@ const BrandBlock: React.FC<BrandProps> = ({
                     size="medium"
                     href={{
                       pathname: ROUTES.SEARCH,
-                      query: { brand: brand.slug },
+                      query: { brand: brand.slug }
                     }}
                     imgSize="large"
                     disableBorderRadius={disableBorderRadius}

@@ -16,11 +16,14 @@ const fetchAncientBrands = async ({ queryKey }: any) => {
 
 export const useBrandsQuery = (options: QueryOptionsType) => {
   if (options.demoVariant === 'ancient') {
-    return useQuery<{ brands: Brand[]; brandsGrid: Brand[]; brandsTimer: Brand[] }, Error>(
-      [API_ENDPOINTS.BRANDS_ANCIENT, options],
-      fetchAncientBrands
-    );
+    return useQuery<
+      { brands: Brand[]; brandsGrid: Brand[]; brandsTimer: Brand[] },
+      Error
+    >([API_ENDPOINTS.BRANDS_ANCIENT, options], fetchAncientBrands);
   }
 
-  return useQuery<{ brands: Brand[]; brandsGrid: Brand[]; brandsTimer: Brand[] }, Error>([API_ENDPOINTS.BRANDS, options], fetchBrands);
+  return useQuery<
+    { brands: Brand[]; brandsGrid: Brand[]; brandsTimer: Brand[] },
+    Error
+  >([API_ENDPOINTS.BRANDS, options], fetchBrands);
 };

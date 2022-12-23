@@ -9,7 +9,7 @@ import { getDirection } from '@utils/get-direction';
 const data = {
   title: 'common:text-subscribe-heading',
   description: 'common:text-subscribe-description',
-  buttonText: 'common:button-subscribe',
+  buttonText: 'common:button-subscribe'
 };
 
 interface Props {
@@ -21,18 +21,18 @@ type FormValues = {
 };
 
 const defaultValues = {
-  subscription_email: '',
+  subscription_email: ''
 };
 
 const SubscriptionWithBg: React.FC<Props> = ({
-  className = 'px-5 sm:px-8 md:px-16 2xl:px-24',
+  className = 'px-5 sm:px-8 md:px-16 2xl:px-24'
 }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
-    defaultValues,
+    defaultValues
   });
   const { locale } = useRouter();
   const dir = getDirection(locale);
@@ -73,8 +73,8 @@ const SubscriptionWithBg: React.FC<Props> = ({
               pattern: {
                 value:
                   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                message: 'forms:email-error',
-              },
+                message: 'forms:email-error'
+              }
             })}
             errorKey={errors.subscription_email?.message}
           />
@@ -88,7 +88,7 @@ const SubscriptionWithBg: React.FC<Props> = ({
           backgroundImage:
             dir === 'rtl'
               ? 'url(/assets/images/subscription-bg-reverse.png)'
-              : 'url(/assets/images/subscription-bg.png)',
+              : 'url(/assets/images/subscription-bg.png)'
         }}
         className={`hidden z-0 xl:block bg-no-repeat ${
           dir === 'rtl'
