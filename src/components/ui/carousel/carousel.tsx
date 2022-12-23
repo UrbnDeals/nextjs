@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/scrollbar';
 
-type CarouselPropsType = {
+type CarouselPropsType = React.PropsWithChildren<{
   className?: string;
   buttonGroupClassName?: string;
   prevActivateId?: string;
@@ -30,7 +30,7 @@ type CarouselPropsType = {
   autoplay?: {} | any;
   type?: 'rounded' | 'circle' | 'list';
   isFraction?: boolean;
-};
+}>;
 
 const Carousel: React.FunctionComponent<CarouselPropsType> = ({
   children,

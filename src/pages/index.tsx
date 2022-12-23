@@ -2,6 +2,7 @@ import Layout from '@components/layout/layout';
 import PageHeader from '@components/ui/page-header';
 import Container from '@components/ui/container';
 import PropertyCarousel from '@containers/property-carousel';
+import TopPlacesCarousel from '@containers/top-places-carousel';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 
@@ -14,7 +15,7 @@ export default function Home() {
       />
       <Container className="my-16">
         <PropertyCarousel
-          sectionHeading="text-testimonial"
+          sectionHeading="text-fix-flips"
           type="list"
           className="relative mb-12 md:mb-14 xl:mb-16"
           reduceCardSpacing={true}
@@ -31,9 +32,9 @@ export default function Home() {
           className="relative mb-12 md:mb-14 xl:mb-16"
           reduceCardSpacing={true}
         />
-        <PropertyCarousel
+        <TopPlacesCarousel
           sectionHeading="text-top-places"
-          type="list"
+          type="rounded"
           className="relative mb-12 md:mb-14 xl:mb-16"
           reduceCardSpacing={true}
         />

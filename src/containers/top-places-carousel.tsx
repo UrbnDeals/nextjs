@@ -5,7 +5,7 @@ import { testimonials } from '@framework/static/testimonials';
 import { testimonialsTwo } from '@framework/static/testimonials-two';
 import { SwiperSlide } from 'swiper/react';
 
-interface PropertyCarouselProps {
+interface TopPlacesProps {
   sectionHeading: string;
   className?: string;
   type?: 'rounded' | 'circle' | 'list';
@@ -37,7 +37,7 @@ const breakpoints = {
   }
 };
 
-const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
+const TopPlacesCarousel: React.FC<TopPlacesProps> = ({
   sectionHeading,
   className = 'mb-10 md:mb-12 xl:mb-14 md:pb-1 xl:pb-0',
   type,
@@ -92,4 +92,4 @@ const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
   );
 };
 
-export default PropertyCarousel;
+export default TopPlacesCarousel;
