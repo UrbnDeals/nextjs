@@ -4,18 +4,18 @@ import Layout from "@components/layout/layout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps } from "next";
 
-export default function MyProfilePage() {
+export default function InsightsPage() {
   return (
 				<>
-			<PageHeader pageHeader="text-page-my-profile" />
+			<PageHeader pageHeader="text-page-insights" />
 			<Container>
-				<div>My Profile</div>
+				<div>Insights</div>
 			</Container>
 		</>
 	)
 }
 
-MyProfilePage.Layout = Layout;
+InsightsPage.Layout = Layout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	return {

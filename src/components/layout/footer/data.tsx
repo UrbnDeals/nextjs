@@ -110,7 +110,7 @@ export const footer = {
         {
           id: 4,
           title: 'link-refund-returns',
-          path: '/refund_returns',
+          path: '/refund-and-returns',
         },
 				{
           id: 5,
