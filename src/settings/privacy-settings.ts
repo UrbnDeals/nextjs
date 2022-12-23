@@ -29,4 +29,49 @@ export const privacyPolicy = [
     title: "privacy-six-title",
     description:"privacy-six-content",
   },
+	{
+    id: "7",
+    title: "privacy-seven-title",
+    description:"privacy-seven-content",
+  },
+  {
+    id: "8",
+    title: "privacy-eight-title",
+    description: "privacy-eight-content",
+  },
+  {
+    id: "9",
+    title: "privacy-nine-title",
+    description:"privacy-nine-content",
+  },
+  {
+    id: "10",
+    title: "privacy-ten-title",
+    description:"privacy-ten-content",
+  },
+  {
+    id: "11",
+    title: "privacy-eleven-title",
+    description:"privacy-eleven-content",
+  },
+  {
+    id: "12",
+    title: "privacy-twelve-title",
+    description:"privacy-twelve-content",
+  },
+	{
+    id: "13",
+    title: "privacy-thirteen-title",
+    description:"privacy-thirteen-content",
+  },
+		{
+    id: "14",
+    title: "privacy-fourteen-title",
+    description:"privacy-fourteen-content",
+  },
+		{
+    id: "15",
+    title: "privacy-fifteen-title",
+    description:"privacy-fifteen-content",
+  },
 ];
