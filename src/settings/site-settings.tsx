@@ -24,12 +24,12 @@ import { SunglassIcon } from '@components/icons/sunglass-icon';
 import { SneakerIcon } from '@components/icons/sneaker-icon';
 
 export const siteSettings = {
-  name: 'urbnDeals',
-  description: 'Fastest E-commerce template built with React, NextJS, TypeScript, React-Query and Tailwind CSS.',
+  name: 'Urbn Deals',
+  description: 'Your real estate investment marketplace. Buy or sell wholesale or investment properties all on one site.',
   author: {
-    name: 'RedQ, Inc.',
-    websiteUrl: 'https://redq.io',
-    address: '',
+    name: 'Urbn Deals, LLC.',
+    websiteUrl: 'https://urbndeals.com/',
+    address: '2700 Neabsco Common Pl, Woodbridge Va',
   },
   logo: {
     url: '/assets/images/urbn-deals.webp',

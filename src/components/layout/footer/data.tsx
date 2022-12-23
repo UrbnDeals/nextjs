@@ -14,7 +14,7 @@ export const footer = {
         {
           id: 1,
           title: 'link-instagram',
-          path: 'https://www.instagram.com/redqinc/',
+          path: 'https://www.instagram.com/urbndeals/?fbclid=IwAR3J741-r0O9lk9cdbW91x0I5sMsdTN9-5DIFjjGmZQ_RthmtfNbZ0xEuIs',
           icon: <IoLogoInstagram />,
         },
         {
@@ -26,20 +26,71 @@ export const footer = {
         {
           id: 3,
           title: 'link-facebook',
-          path: 'https://www.facebook.com/redqinc/',
+          path: 'https://www.facebook.com/urbndeals/',
           icon: <IoLogoFacebook />,
         },
         {
           id: 4,
           title: 'link-youtube',
-          path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+          path: 'https://www.youtube.com/channel/UC7Sbs9VOQd8TRFw50xeb-dQ',
           icon: <IoLogoYoutube />,
         },
       ],
     },
     {
       id: 2,
-      widgetTitle: 'widget-title-contact',
+      widgetTitle: 'widget-title-account',
+      lists: [
+        {
+          id: 1,
+          title: 'link-my-profile',
+          path: '/my-profile',
+        },
+        {
+          id: 2,
+          title: 'link-favorite-properties',
+          path: '/favorite-properties',
+        },
+        {
+          id: 3,
+          title: 'link-messages',
+          path: '/messages',
+        },
+        {
+          id: 4,
+          title: 'link-subscription',
+          path: '/my-account/subscriptions',
+        },
+				{
+          id: 5,
+          title: 'link-payment-methods',
+          path: '/my-account/payment-methods',
+        },
+				{
+          id: 6,
+          title: 'link-insights',
+          path: '/insights',
+        },
+				{
+          id: 7,
+          title: 'link-board',
+          path: '/board',
+        },
+				{
+          id: 8,
+          title: 'link-affiliate-program',
+          path: '/affiliate-registration',
+        },
+				{
+          id: 9,
+          title: 'link-dashboard',
+          path: '/sales-dashboard',
+        },
+      ],
+    },
+    {
+      id: 3,
+      widgetTitle: 'widget-title-company',
       lists: [
         {
           id: 1,
@@ -48,120 +99,73 @@ export const footer = {
         },
         {
           id: 2,
-          title: 'link-email',
-          path: '/',
+          title: 'link-privacy-policy',
+          path: '/privacy',
         },
         {
           id: 3,
-          title: 'link-email-two',
-          path: '/',
+          title: 'link-terms-conditions',
+          path: '/terms-and-conditions',
         },
         {
           id: 4,
-          title: 'link-phone',
-          path: '/',
+          title: 'link-refund-returns',
+          path: '/refund_returns',
         },
-      ],
-    },
-    {
-      id: 3,
-      widgetTitle: 'widget-title-about',
-      lists: [
-        {
-          id: 1,
-          title: 'link-support-center',
-          path: '/contact-us',
+				{
+          id: 5,
+          title: 'link-about',
+          path: '/about',
         },
         {
-          id: 2,
-          title: 'link-customer-support',
-          path: '/',
-        },
-        {
-          id: 3,
-          title: 'link-about-us',
-          path: '/contact-us',
-        },
-        {
-          id: 4,
-          title: 'link-copyright',
-          path: '/',
+          id: 6,
+          title: 'link-become-seller',
+          path: '/become-a-seller',
         },
       ],
     },
     {
       id: 4,
-      widgetTitle: 'widget-title-customer-care',
+      widgetTitle: 'widget-title-surveys',
       lists: [
         {
           id: 1,
-          title: 'link-faq',
-          path: '/faq',
+          title: 'link-product-feedback',
+          path: 'https://www.typeform.com/private-typeform/?utm_source=typeform.com-21325184-free&utm_medium=typeform&utm_content=typeform-private&utm_campaign=KOWzlkWY',
         },
         {
           id: 2,
-          title: 'link-shipping',
-          path: '/',
+          title: 'link-apply-intern',
+          path: 'https://www.typeform.com/private-typeform/?utm_source=typeform.com-21325184-free&utm_medium=typeform&utm_content=typeform-private&utm_campaign=m9FMiY6e',
         },
         {
           id: 3,
-          title: 'link-exchanges',
-          path: '/',
+          title: 'link-become-partner',
+          path: 'https://8yhglvs5dz1.typeform.com/to/UvoNsGdd',
+        },
+				{
+          id: 4,
+          title: 'link-fund-us',
+          path: 'https://8yhglvs5dz1.typeform.com/to/YTkWeseT',
         },
       ],
     },
     {
       id: 5,
-      widgetTitle: 'widget-title-our-information',
+      widgetTitle: 'widget-title-resources',
       lists: [
         {
           id: 1,
-          title: 'link-privacy',
-          path: '/privacy',
+          title: 'link-free-contracts',
+          path: '/free-real-estate-contracts',
         },
         {
           id: 2,
-          title: 'link-terms',
-          path: '/terms',
-        },
-        {
-          id: 3,
-          title: 'link-return-policy',
-          path: '/privacy',
-        },
-        {
-          id: 4,
-          title: 'link-site-map',
-          path: '/',
-        },
+          title: 'link-blog',
+          path: '/blogs',
+        }
       ],
-    },
-    {
-      id: 6,
-      widgetTitle: 'widget-title-top-categories',
-      lists: [
-        {
-          id: 1,
-          title: 'link-men-wear',
-          path: '/search',
-        },
-        {
-          id: 2,
-          title: 'link-men-wear',
-          path: '/search',
-        },
-        {
-          id: 3,
-          title: 'link-kids-wear',
-          path: '/search',
-        },
-        {
-          id: 4,
-          title: 'link-sports-wear',
-          path: '/search',
-        },
-      ],
-    },
+    }
   ],
   payment: [
     {
@@ -274,7 +278,33 @@ export const footerContemporary = {
     },
     {
       id: 2,
-      widgetTitle: 'widget-title-contact',
+      widgetTitle: 'widget-title-account',
+      lists: [
+        {
+          id: 1,
+          title: 'link-my-profile',
+          path: '/contact-us',
+        },
+        {
+          id: 2,
+          title: 'link-favorite-properties',
+          path: '/',
+        },
+        {
+          id: 3,
+          title: 'link-messages',
+          path: '/',
+        },
+        {
+          id: 4,
+          title: 'link-messages',
+          path: '/',
+        },
+      ],
+    },
+    {
+      id: 3,
+      widgetTitle: 'widget-title-company',
       lists: [
         {
           id: 1,
@@ -283,39 +313,13 @@ export const footerContemporary = {
         },
         {
           id: 2,
-          title: 'link-email',
+          title: 'link-privacy-policy',
           path: '/',
         },
         {
           id: 3,
-          title: 'link-email-two',
-          path: '/',
-        },
-        {
-          id: 4,
-          title: 'link-phone',
-          path: '/',
-        },
-      ],
-    },
-    {
-      id: 3,
-      widgetTitle: 'widget-title-about',
-      lists: [
-        {
-          id: 1,
-          title: 'link-support-center',
-          path: '/contact-us',
-        },
-        {
-          id: 2,
-          title: 'link-customer-support',
-          path: '/',
-        },
-        {
-          id: 3,
-          title: 'link-about-us',
-          path: '/contact-us',
+          title: 'link-terms-conditions',
+          path: '/terms-and-conditions',
         },
         {
           id: 4,
@@ -326,28 +330,28 @@ export const footerContemporary = {
     },
     {
       id: 4,
-      widgetTitle: 'widget-title-customer-care',
+      widgetTitle: 'widget-title-surveys',
       lists: [
         {
           id: 1,
-          title: 'link-faq',
+          title: 'link-product-feedback',
           path: '/faq',
         },
         {
           id: 2,
-          title: 'link-shipping',
+          title: 'link-apply-intern',
           path: '/',
         },
         {
           id: 3,
-          title: 'link-exchanges',
+          title: 'link-become-partner',
           path: '/',
         },
       ],
     },
     {
       id: 5,
-      widgetTitle: 'widget-title-our-information',
+      widgetTitle: 'widget-title-resources',
       lists: [
         {
           id: 1,
@@ -356,7 +360,7 @@ export const footerContemporary = {
         },
         {
           id: 2,
-          title: 'link-terms',
+          title: 'link-blog',
           path: '/terms',
         },
         {
