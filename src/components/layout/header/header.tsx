@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import SearchIcon from '@components/icons/search-icon';
 import { siteSettings } from '@settings/site-settings';
 import HeaderMenu from '@components/layout/header/header-menu';
 import Logo from '@components/ui/logo';
+import Link from "@components/ui/link";
 import { useUI } from '@contexts/ui.context';
 import { ROUTES } from '@utils/routes';
 import { addActiveScroll } from '@utils/add-active-scroll';
@@ -34,18 +34,13 @@ const Header: React.FC = () => {
           <Logo />
 
           <HeaderMenu data={site_header.menu} className="hidden lg:flex md:ms-6 xl:ms-10" />
-
+					<Link href="/add-a-listing"  className="whitespace-nowrap mr-2 text-primary">
+						{t("common:text-add-listing")}
+					</Link>
           <div className="flex-shrink-0 ms-auto lg:me-5 xl:me-8 2xl:me-10">
             <LanguageSwitcher />
           </div>
           <div className="hidden lg:flex justify-end items-center space-s-6 lg:space-s-5 xl:space-s-8 2xl:space-s-10 ms-auto flex-shrink-0">
-            <button
-              className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none transform"
-              onClick={openSearch}
-              aria-label="search-button"
-            >
-              <SearchIcon />
-            </button>
             <div className="-mt-0.5 flex-shrink-0">
               <AuthMenu
                 isAuthorized={isAuthorized}
